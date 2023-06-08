@@ -7,6 +7,7 @@ void decreasing(int n){
     decreasing(n-1);
     return;
 }
+
 int main(){
     int n;
     printf("Enter number n : ");
