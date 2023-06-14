@@ -1,6 +1,6 @@
 #include <stdio.h>
 void fun(int x[]){      // pass by reference values
-    int temp = x[0];    // full array with it's address will be passed in this function.
+    int temp = x[0];    // full array with it's address of array will be passed in this function.
     x[0] = x[1];        // So if changes are made here, they will appear in the output as well.
     x[1] = temp;
     return;
