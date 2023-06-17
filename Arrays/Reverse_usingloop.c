@@ -8,7 +8,7 @@ void reverse(int array[]){
         array[j] = temp;
         i++;
         j--;
-    }
+    }   
     return;
 }
 int main() {
