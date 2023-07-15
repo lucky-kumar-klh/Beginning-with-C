@@ -1,7 +1,7 @@
 #include<stdio.h>
 int main() {
     int c, i, j;
-    printf("Enter no of columns : ");
+    printf("Enter no of columns : "); // hi
     scanf("%d", &c);
     
     int arr[2][c];
