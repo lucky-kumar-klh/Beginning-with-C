@@ -1,11 +1,7 @@
 #include <stdio.h>
-int main() {
-    int i ;
-    while ( i = 20 )
-    {
-        printf("%d\n", i);
-        i++;
-    }
-    
+int main(){
+ 
+    printf("Hello world!\n");
+    printf("Hello world!");
     return 0;
 }
