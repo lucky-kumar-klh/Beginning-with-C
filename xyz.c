@@ -1,5 +1,7 @@
 #include <stdio.h>
 int main(){
-	printf("");
+	char a = 'A';
+	printf("%c\n", sizeof(a));
+	printf("\"Lucky\"\n");
 	return 0;
 }
