@@ -1,51 +1,57 @@
 #include <stdio.h>
-int main() {
+int main(){
     int m, n;
-    printf("Enter no of rows m : ");
+    printf("Enter number of rows m: ");
     scanf("%d", &m);
-    printf("Enter no of columns n : ");
+    printf("Enter number of columns n: ");
     scanf("%d", &n);
-    printf("Enter the elements in your Matrix :\n");
+    
+    printf("Enter the elements of the matrix:\n");
     int arr[m][n];
-    for (int i = 0; i < m; i++){
-        for (int j = 0; j < n; j++){
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < n; j++) {
             scanf("%d", &arr[i][j]);
         }
     }
-    printf("Your Matrix is :\n");
-    for (int i = 0; i < m; i++){
-        for (int j = 0; j < n; j++){
+    
+    printf("Your Matrix is:\n");
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < n; j++) {
             printf("%d  ", arr[i][j]);
         }
         printf("\n");
     }
-    printf("Spiral Print of matrix is :\n");
-    // spiral printing
-    int minr = 0, maxr = m-1;
-    int maxc = n-1, minc = 0;
-    int tot_ele = m * n, count = 0;
-    while ( count < tot_ele ){
-        for (int j = minc; j <= maxc; j++){
-            printf("%d  ", arr[minr][j]);
+    
+    printf("Spiral Print of matrix is:\n");
+    int r1 = 0, r2 = m - 1;
+    int c1 = n-1, c2 = 0;
+    int count = 0, total = m * n;
+    
+    while (count < total) {
+        for (int j = c2; j <= c1; j++){
+            printf("%d ", arr[r1][j]);
             count++;
+            if ( count >= total ) break;
         }
-        minr++;
-        for (int i = minr; i <= maxr; i++){
-            printf("%d  ", arr[i][maxc]);
+        r1++;
+        for (int i = r1; i <= r2; i++){
+            printf("%d ", arr[i][c1]);
             count++;
+            if ( count >= total ) break;
         }
-        maxc--;
-        for (int j = maxc; j >= maxr; j--){
-            printf("%d  ", arr[maxr][j]);
+        c1--;
+        for (int j = c1; j >= c2; j--){
+            printf("%d ", arr[r2][j]);
             count++;
+            if ( count >= total ) break;
         }
-        maxr--;
-        for (int i = maxr; i >= minr; i--){
-            printf("%d  ", arr[i][minc]);
+        r2--;
+        for (int i = r2; i >= r1; i--){
+            printf("%d ", arr[i][c2]);
             count++;
+            if ( count >= total ) break;
         }
-        minc++;
+        c2++;
     }
-
     return 0;
 }
