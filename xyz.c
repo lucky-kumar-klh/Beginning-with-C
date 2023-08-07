@@ -4,7 +4,7 @@ int main(){
 	printf("Enter your number : ");
 	scanf("%d", &n);
 	t = n;
-	int sum = 0, a = 0;
+	int sum = 0, a = 0; 
 	while ( n != 0 ){
 		r = n % 10 ;
         cube = r*r*r ;
