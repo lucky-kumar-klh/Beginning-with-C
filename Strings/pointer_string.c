@@ -5,7 +5,7 @@ int main(){
     int i = 0;
     while ( *ptr != '\0' ){
         printf("%c", *ptr);  // *ptr means value at address
-        ptr++; // since gap between two address is 1 so pts++ 
+        *ptr++; // since gap between two address is 1 so pts++ 
         //i++;
     }
     
