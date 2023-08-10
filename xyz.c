@@ -1,8 +1,9 @@
 #include <stdio.h>
 int main(){	
-	int i, j, k = 0;
-	//i = j = k = 0;
-	k = ++i*++j;
-	printf("%d\n",i+j+k);
+	int marks;
+	printf("Enter marks : ");
+	scanf("%d", &marks);
+	if ( marks > 50) printf("Pass\n");
+	else printf("Fail\n");
 	return 0;
 } 
