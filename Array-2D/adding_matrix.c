@@ -9,6 +9,5 @@ int main() {
         } 
         printf("\n");                        // Without using an extra array !!
     }
-    
     return 0;
 }
