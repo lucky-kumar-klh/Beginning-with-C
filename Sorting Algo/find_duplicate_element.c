@@ -10,21 +10,15 @@
 //     }
 //     printf("Done Sir !\n");
 //     return 0;
-// 
+
 
 int main(){
-    int x = 0;
-    int arr[] = {0,2,8,4,5,6,7,8,9};
-    int brr[] = {0,0,0,0,0,0,0,0,0};
-    for ( int i = 0; i < 9; i++){
-        if ( brr[x] != 1 ){
-            x = arr[i];
-            brr[x] = 1;
-        }
-        else {
-            printf("%d\n", arr[i]);
-            break;
-        }
+    int arr[] = {6,1,7,3,2,5,4,8,9,9,10};
+    int sum = 55, sumArr = 0;
+    for (int i = 0; i < 11; i++){
+        sumArr += arr[i];
     }
+    int extraElement = sumArr - sum;
+    printf("%d\n", extraElement);
     return 0;
 }
