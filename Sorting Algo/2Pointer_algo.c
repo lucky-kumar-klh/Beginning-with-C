@@ -5,7 +5,7 @@ int main(){
     int i = 0, j = n-1;
     // for (int i = 0, j = 9; i < j; i++, j--){
     //     if ( arr[i] + arr[j] == 12 ){
-    //         printf("Yeah !\n");
+    //         printf("Yeah !\n");k
     //     }
     // }
 
