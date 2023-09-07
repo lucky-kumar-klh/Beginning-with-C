@@ -1,23 +1,34 @@
 #include <stdio.h>
-// int min(int i, int j){
-// 	if ( i > j ){
-// 		return j;
-// 	}
-// 	else return i;
-//}
- int main(){	
-	int n, i, j;
-	scanf("%d", &n);
-	printf("Enter any number : ");
-	int min = 0;
-    for (int i = 0; i < n; i++){
-		for (int j = 0; j < n; j++){
-			if ( i<j ) min = i;
-			else min = j;
-			printf("%d ", min);
+
+int main()
+{
+	int T, n = 5, X, H, i_attack, i_health, f_health, f_attack;
+	scanf("%d", &T);
+
+	while (T != 0)
+	{
+		scanf("%d %d", &X, &H);
+		i_health = H;
+		i_attack = X / 2;
+		int count = 0;
+		for (int i = 1; i <= 5; i++)
+		{
+			if (i_health > 0)
+			{
+				i_health = i_health - i_attack;
+				count++;
+			}
 		}
-		printf("\n");
+		f_health = i_health;
+
+		while (f_health > 0)
+		{
+			f_health = f_health - X;
+			count++;
+		}
+		printf("%d\n", count);
+		T--;
 	}
-	
+
 	return 0;
 }
