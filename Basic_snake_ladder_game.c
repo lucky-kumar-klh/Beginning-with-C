@@ -16,9 +16,9 @@ int main(){
                     printf("Current position is %d\n", position);
                     steps++;
                 }
-                else printf("You cannot enter values greater than %d in order to win this game.\nTry Again !!\n", (100-position));
+                else printf("You cannot enter values greater than %d in order to win this game.\nTry Again !!\n\n", (100-position));
             }
-            if ( position == 100 ) printf("Finally!! You've completed this game.\nYou took total %d steps to complete this game", steps);
+            if ( position == 100 ) printf("\n\nFinally!! You've completed this game.\nYou took total %d steps to complete this game.\n", steps);
         }
     
         else {   // else he will play normally
