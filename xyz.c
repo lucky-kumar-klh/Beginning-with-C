@@ -1,37 +1,21 @@
 #include <stdio.h>
 #include <math.h>
-int digits(int a){
+int digit(int a){
 	int count = 0;
-	while ( a != 0 )
-	{
-		a = a/10;
+	while ( a != 0 ){
+		a /= 10;
 		count++;
 	}
-	
-	return count-1;
+	return (count-1);
 }
-int main()
-{
-    int n;
+int main(){
+	
+	int n;
 	int lastDigit, firstDigit;
 	scanf("%d", &n);
-	
+    lastDigit = n / pow(10,digit(n));
 	firstDigit = n % 10;
-	lastDigit = n / pow(10,digits(n));
 
-    if ( lastDigit == 0 ){
-		lastDigit = n;
-	}
+	printf("First Digit = %d\nLast Digit = %d", firstDigit, lastDigit);
 	
-	
-
-	if ( firstDigit == lastDigit )
-	{
-		printf("Yes, %d is a Rainbow Number", n);
-	}
-	else printf("No, %d is not a Rainbow number", n);
-	
-
-
-	return 0;
 }
