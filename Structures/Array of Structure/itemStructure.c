@@ -1,3 +1,4 @@
+// unit --> g (grams), d (dozens), l (litres)
 #include <stdio.h>
 struct item{
     char name[50];
@@ -10,7 +11,7 @@ int main(){
     struct item arr[n];
     
     for (int i = 0; i < n; i++){
-        printf("Enter Item no %d : ", i+1);
+        printf("Enter Item Name : ");
         scanf(" %[^\n]s", &arr[i].name);
         printf("Enter its ID : ");
         scanf("%d", &arr[i].id);
