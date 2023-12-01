@@ -1,46 +1,41 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <stdbool.h>
+// Binary search function.
+int binary_search(int arr[],int lower,int upper,int num)
+{
+    int mid = (lower+upper)/2;
+    if(num==arr[mid]) return mid;
+    else if(num<arr[mid]) upper = mid - 1;
+    else lower = mid + 1;
 
-#define MAX_SIZE 100
-
-// Function to check if the given string has balanced parentheses
-bool isBalancedParentheses(char inputString[]) {
-    char stack[MAX_SIZE];
-    int top = -1;  // Initialize stack top
-
-    // Define a mapping for opening and closing parentheses
-    char mapping[3][2] = {{')', '('}, {'}', '{'}, {']', '['}};
-
-    // Iterate through each character in the input string
-    for (int i = 0; inputString[i] != '\0'; i++) {
-        // If the character is a closing parenthesis
-        if (inputString[i] == mapping[0][0] || inputString[i] == mapping[1][0] || inputString[i] == mapping[2][0]) {
-            // Pop the top element from the stack if it's not empty, otherwise assign a dummy value
-            char topElement = (top != -1) ? stack[top--] : '#';
-
-            // Check if the popped element matches the corresponding opening parenthesis
-            if (topElement != mapping[0][1] && topElement != mapping[1][1] && topElement != mapping[2][1]) {
-                return false;
-            }
-        } else {
-            // If it's an opening parenthesis, push it onto the stack
-            stack[++top] = inputString[i];
-        }
-    }
-
-    // After iterating through the entire string, the stack should be empty for a balanced string
-    return (top == -1);
+    // If lower > upper it means element doesnot exist in array. So return -1.
+    if(lower>upper) return -1; 
+    // Else call the binary search function with new lower and upper values.
+    else binary_search(arr,lower,upper,num);
 }
 
-int main() {
-    char inputStr[] = "{}";
-
-    if (isBalancedParentheses(inputStr)) {
-        printf("The string %s has balanced parentheses.\n", inputStr);
-    } else {
-        printf("The string %s does not have balanced parentheses.\n", inputStr);
+int main()
+{
+    int size;
+    // Step-1 Scanning the size of the array.
+    printf("Please enter the size of the array: ");
+    scanf("%d",&size);
+    int array[size];
+    // Step-2 Scanning the array.
+    printf("Please enter the array: ");
+    for(int i=0;i<size;i++)
+    {
+        scanf("%d",&array[i]);
     }
-
+    // Step-3 Scanning the number to search.
+    int num;
+    printf("Please enter the number to search: ");
+    scanf("%d",&num);
+    // Step-4 Declaring the initial lower and upper values.
+    int lower=0,upper=size-1;
+    // Step-5 Using a flag variable to store the position of requires number.
+    int flag = binary_search(array,lower,upper,num);
+    // Step-6 Printing the postion stores in flag variable.
+    if(flag == -1) printf("The element does not exist in array.");
+    else printf("The element is present in %d position.",flag);
     return 0;
 }
