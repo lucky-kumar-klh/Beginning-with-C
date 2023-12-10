@@ -1,5 +1,5 @@
 #include <stdio.h>
-#define n 4;
+#define n 4
 int queue[n];
 int rear = -1, front = -1;
 /*
