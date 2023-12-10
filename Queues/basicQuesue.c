@@ -16,28 +16,28 @@ void display (){
     printf("%d ", queue[i]);
 }
 void enque ( int data ){
-  if (rear == n-1)
-    printf("Queue is full");
-  else if (rear == -1){
+  if (rear == n-1)  // full queue
+    printf("Queue is full"); 
+  else if (rear == -1){  // empty queue
       rear = front = 0;
       queue[rear] = data;
   }
-  else {
+  else {  // normal queue
     rear++;
     queue[rear] = data;
   }
 }
 int dequeue (int data){
-  if ( front == -1 ){
+  if ( front == -1 ){  // empty queue
     printf("Empty queue");
     return -1;
   }
-  else if ( front == rear ){
+  else if ( front == rear ){  // only one element is in queue
     int d = queue[front];
     front = -1, rear = -1;
     return d;
   }
-  else {
+  else {  // normal queue
     int d = queue[front];
     front++;
     return d;
