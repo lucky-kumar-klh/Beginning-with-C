@@ -40,10 +40,16 @@ void deleteNode(){
 }
 
 void dispaly(){
-  // if (head == NULL) printf("Empty List");
-  // else {
-  //   for (int i = )
-  // }
+  if (head == NULL){
+    printf("Empty List !\n\n");
+  }
+  struct Node *temp = head;
+  printf("\nYour data : ");
+  while (temp != NULL){
+    temp = temp -> link;
+    printf("%d ", temp -> data);
+  }
+  printf("\n\n");
 }
 
 void showMenu(int *t){

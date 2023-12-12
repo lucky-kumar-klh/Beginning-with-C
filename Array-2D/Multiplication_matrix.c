@@ -25,7 +25,7 @@ int main(){
         printf("Sorry !! You can not multiply these matrices \n");
         printf("You need to follow rules before multiplying 2 matrices.\n");
     }
-    
+    else  {
     int brr[r2][c2];
     for (int i = 0; i < r2; i++){
         for (int j = 0; j < c2; j++){
@@ -53,6 +53,7 @@ int main(){
             printf("%d  ", mrr[i][j]);
         }
         printf("\n");
+    }
     }
     return 0;
 }
