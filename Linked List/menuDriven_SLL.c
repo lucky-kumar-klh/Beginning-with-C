@@ -14,7 +14,7 @@ void createNode(){
   int value;
   printf("Press 1 to create, 0 to Exit : ");
   scanf("%d", &choice);
-  while (choice != 0){
+  while (choice){
     new = (struct Node *)malloc(sizeof(struct Node));  // allocate memory
     printf("Enter data : ");
     scanf("%d", &value);
