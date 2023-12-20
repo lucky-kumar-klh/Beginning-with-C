@@ -14,8 +14,14 @@ int main(){
     scanf("%d", &a);
     printf("Enter number b : ");
     scanf("%d", &b);
-    
-    swap(&a,&b);
+    int *x = &a;
+    int *y = &b;
+
+    int temp = *x;
+    *x = *y;
+    *y = temp;
+
+    // swap(&a,&b);
     printf("a = %d\n", a);
     printf("b = %d\n", b);
 

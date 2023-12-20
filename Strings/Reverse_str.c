@@ -1,20 +1,23 @@
-#include<stdio.h>
+#include <stdio.h>
+#include <string.h>
+int palindrome(char str[], int size){
+    int check = 0;
+    for (int i = 0, j = size-1; i <= j; i++, j--){
+        if (str[i] != str[j]){
+            check = 1;
+        }
+    }
+    return check;
+}
 int main(){
     char str[100];
-    printf("Enter your string : ");
-    gets(str);
-    printf("Size of this string is : ");
-    int i = 0, number = 0;
-    while ( str[i] != '\0' ){
-        number++;
-        i++;
+    scanf(" %[^\n]s", str);
+    int size = strlen(str);
+    
+    if (palindrome(str, size)) {
+        printf("Not a palindrome");
     }
-    int size = number;
-    printf("%d\n", size);
-    printf("Reverse of this string is : ");
-    for (int i = size; i >= 0; i--){
-        printf("%c", str[i]);
-    }
+    else printf("Palindrome");
     
     return 0; 
 }

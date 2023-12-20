@@ -5,7 +5,6 @@ int main(){
         int No_ofPages;
         float price;
     }book;
-
     book a;
     book b;
     book c;
@@ -15,7 +14,10 @@ int main(){
     b.price = 80.00;
     c.No_ofPages = 100;
 
-    
+    typedef struct Node{
+        int data;
+        int value;
+    }
 
     return 0;
 }

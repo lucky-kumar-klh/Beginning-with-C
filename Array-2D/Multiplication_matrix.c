@@ -1,5 +1,7 @@
 #include <stdio.h>
+
 int main(){
+
     int r1, c1;
     // int arr[3][2] = {{1,0},{4,1},{2,3}};
     printf("Let us create 1st matrix ! \n");

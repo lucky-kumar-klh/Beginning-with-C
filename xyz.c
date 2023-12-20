@@ -1,51 +1,110 @@
 #include <stdio.h>
 #include <stdlib.h>
-struct node{
-	int data;
-	struct node *next;
-};
-struct node *head = NULL;
-void insertNode(struct node **s, int value){ //
-	struct node *new, *temp;
-	new = (struct node *)malloc(12);
-	new -> data = value;
-	new -> new = NULL;
-	if (*s == NULL){ // emply list
-		*s = new;
-	}
-	else { // existing list
-		temp = *s // temp is pointing to node whose address is in start
-		while ( temp -> next != NULL ){ // make temp node move to second last node
-			temp = temp -> next;
-		}
-		temp -> next = new;
-	}
+
+struct node
+{
+ int data;
+ struct node *next;
+}*start=NULL,*curr=NULL;
+
+void create(int ele)
+{
+ struct node *newnode;
+ newnode=(struct node*)malloc(sizeof(struct node));
+ newnode->data = ele;
+ newnode->next=NULL;
+ 
+ if(start==NULL)
+  start=newnode;
+ else
+  curr->next=newnode;
+  
+ curr=newnode;
 }
-void userInsert(){
-	struct node *temp, *new;
-	int inp, choice;
-	do {
-		new = (struct node *)malloc(12);
-		printf("Enter data : ");
-		scanf("%d", &inp);
-		new -> data = inp;
-		new -> next = NULL;
-		if (head == NULL){  // empty list (only head is present initially)
-			head = new;  // assigning address of new node to starting/head node
-			temp = head; // temp just track the 1st node (that is after head node)
-		}
-		else { // already existing nodes 
-			temp -> next = new;  // previos node (i,e,. temp) storing address of new (new node)
-			temp = temp -> next; // pointing to last node (i,e. new)
-		}
-		printf("Press 1 to continue, 0 to stop : ");
-		scanf("%d", &choice);
-	} 
-	while (choice != 0);
+
+void insert_at_end()
+{
+ int ele;
+ printf("Please enter the num: ");
+ scanf("%d",&ele);
+ struct node *newnode;
+ newnode = (struct node*)malloc(sizeof(struct node));
+ newnode->data = ele;
+ newnode->next = NULL;
+ 
+ curr->next = newnode;
+ curr = newnode;
 }
-int main(){
-	struct node *start = NULL;
-	insertNode(&start, 24);
-	userInsert();
-	return 0;
+
+void display()
+{
+ if(start==NULL)
+  printf("list is empty");
+ else
+ {
+  struct node *temp=start;
+  while(temp!=NULL)
+  {
+   printf("%d ",temp->data);
+   temp = temp->next;
+  }
+ }
+}
+
+void sort()
+{
+ if(start==NULL)
+  printf("List is empty");
+ else
+ {
+  struct node *i=start;
+  while(i!=NULL)
+  {
+   struct node *j=start;
+   while(j!=NULL)
+   {
+    struct node *k = j->next;
+    if(j->data > k->data)
+    {
+     int x=j->data;
+     j->data=k->data;
+     k->data=x;
+    }
+    j=j->next;
+   }
+   i=i->next;
+  }
+ }
+}
+
+int main()
+{
+ int choice,ele;
+ do{
+  printf("\n0.Exit\n1.Create\n2.Insert at end\n3.Display\nPlease enter the choice: ");
+  scanf("%d",&choice);
+  switch(choice)
+  {
+   case 0:
+    printf("Exited!");
+    break;
+   case 1:
+    printf("Please enter the element: ");
+    scanf("%d",&ele);
+    create(ele);
+    break;
+   case 2:
+    insert_at_end();
+    break;
+   case 3:
+    display();
+    break;
+   case 4:
+    sort();
+    break;
+   default:
+    printf("Invalid input!");
+    break;
+  }
+ }while(choice!=0);
 }
