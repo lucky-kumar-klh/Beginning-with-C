@@ -23,12 +23,15 @@ void createNode(){
     // now we need to link this new node to previous node in order to maintain linked list
     if (head == NULL) {  // empty list
       head = new;
+      temp = head;
     }
     else {
-      temp = head;
-      while (temp -> link != NULL)
-        temp = temp -> link;
-      temp -> link = new;
+      // temp = head;
+      // while (temp -> link != NULL)
+      //   temp = temp -> link;
+      // temp -> link = new;
+      temp->link = new;  // address store
+      temp = temp->link;  // point to new node
     }
     printf("Press 1 to create, 0 to Exit : ");
     scanf("%d", &choice);

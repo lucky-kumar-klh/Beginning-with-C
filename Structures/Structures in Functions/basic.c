@@ -4,6 +4,7 @@ struct rational{
     int dm;
     int nm;
 } r1, r2;
+
 // to access any attribute of a class using pointers use "->" instead of "."
 void accept (struct rational* r){
     scanf("%d %d", &r->nm, &r->dm);
