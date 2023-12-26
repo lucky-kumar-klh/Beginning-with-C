@@ -1,110 +1,58 @@
+// *** STACK ***
 #include <stdio.h>
-#include <stdlib.h>
+#define n 20
+int top = -1; 
+int arr[n];
+int choice;
 
-struct node
-{
- int data;
- struct node *next;
-}*start=NULL,*curr=NULL;
+void push(){
+  printf("\nPush Done !\n");
+}
 
-void create(int ele)
-{
- struct node *newnode;
- newnode=(struct node*)malloc(sizeof(struct node));
- newnode->data = ele;
- newnode->next=NULL;
- 
- if(start==NULL)
-  start=newnode;
- else
-  curr->next=newnode;
+void pop(){
+  printf("\nElement Popped !\n");
+}
+
+void peep(){
+  printf("\nPeeped !\n");
+}
+
+void display(){
+  printf("\nDisplayed Successfully\n");
+}
+
+void accept(){
+  printf("\n1. Push\n2. Pop\n3. Peep\n4. Display\n5. Exit\nEnter Choice : ");
+  scanf("%d", &choice);
+}
+
+int main(){
+
+  int run = 1;
+  accept();
   
- curr=newnode;
-}
+  while (run) {
 
-void insert_at_end()
-{
- int ele;
- printf("Please enter the num: ");
- scanf("%d",&ele);
- struct node *newnode;
- newnode = (struct node*)malloc(sizeof(struct node));
- newnode->data = ele;
- newnode->next = NULL;
- 
- curr->next = newnode;
- curr = newnode;
-}
-
-void display()
-{
- if(start==NULL)
-  printf("list is empty");
- else
- {
-  struct node *temp=start;
-  while(temp!=NULL)
-  {
-   printf("%d ",temp->data);
-   temp = temp->next;
-  }
- }
-}
-
-void sort()
-{
- if(start==NULL)
-  printf("List is empty");
- else
- {
-  struct node *i=start;
-  while(i!=NULL)
-  {
-   struct node *j=start;
-   while(j!=NULL)
-   {
-    struct node *k = j->next;
-    if(j->data > k->data)
-    {
-     int x=j->data;
-     j->data=k->data;
-     k->data=x;
+    switch (choice){
+      case 1:
+        push();
+        break;
+      case 2:
+        pop();
+        break;
+      case 3:
+        peep();
+        break;
+      case 4:
+        display();
+        break;
+      case 5:
+        printf("Thank you for your time");
+        return 0;
+      default:
+        printf("\nInvalid Choice! Try again\n");
+        break;
     }
-    j=j->next;
-   }
-   i=i->next;
+    accept();
   }
- }
-}
-
-int main()
-{
- int choice,ele;
- do{
-  printf("\n0.Exit\n1.Create\n2.Insert at end\n3.Display\nPlease enter the choice: ");
-  scanf("%d",&choice);
-  switch(choice)
-  {
-   case 0:
-    printf("Exited!");
-    break;
-   case 1:
-    printf("Please enter the element: ");
-    scanf("%d",&ele);
-    create(ele);
-    break;
-   case 2:
-    insert_at_end();
-    break;
-   case 3:
-    display();
-    break;
-   case 4:
-    sort();
-    break;
-   default:
-    printf("Invalid input!");
-    break;
-  }
- }while(choice!=0);
 }

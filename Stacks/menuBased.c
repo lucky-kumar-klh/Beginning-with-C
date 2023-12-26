@@ -8,7 +8,7 @@ void push(){
   int data;
   printf("Enter data to push : ");
   scanf("%d", &data);
-  if (top == (n-1)){  // full stack
+  if (top == (50-1)){  // full stack
     printf("Stack-Overflow\n\n");
   }
   else if (top == -1){  // empty stack
