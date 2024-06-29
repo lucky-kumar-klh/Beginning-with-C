@@ -2,12 +2,12 @@
 #define size 5
 int queue[size], rear = -1, front = -1;
 void insert_at_front(int ele) {
-  if ((front == 0 && rear == size - 1) || (front == rear + 1))
+  if ((front == 0 && rear == size - 1) || front - 1 == rear)
     printf("Queue is Full\n");
   else if (front == -1 && rear == -1) {
     front = rear = 0;
     queue[front] = ele;
-  } else if (front == 0) {   // Insert at begin but element is already is there
+  } else if (front == 0) { // Insert at begin but element is already is there
     front = size - 1;
     queue[front] = ele;
   } else {
